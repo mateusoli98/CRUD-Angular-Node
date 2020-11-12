@@ -17,7 +17,7 @@ module.exports = {
     return res.json({ message: "Usuário atualizado com sucesso" });
   },
   async delete(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
     await User.destroy({ where: { id } });
     return res.json({ message: "Usuário removido com sucesso" });
   },
