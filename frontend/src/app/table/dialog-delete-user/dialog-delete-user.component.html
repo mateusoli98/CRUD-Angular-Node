@@ -1,0 +1,18 @@
+<h4 mat-dialog-title>Deletar</h4>
+<div mat-dialog-content>
+  <p>Deseja mesmo deletar o usuário(a) {{ user.name }}?</p>
+</div>
+<div mat-dialog-actions class="actions">
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="deleteUser()"
+    [mat-dialog-close]="true"
+  >
+    Sim
+  </button>
+
+  <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial>
+    Cancelar
+  </button>
+</div>

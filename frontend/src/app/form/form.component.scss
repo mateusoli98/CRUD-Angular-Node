@@ -1,0 +1,16 @@
+section {
+  padding: 20px;
+}
+form {
+  display: flex;
+  justify-content: space-between;
+
+  mat-form-field {
+    width: 32%;
+  }
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,49 @@
+<section>
+  <h2>Cadastro de usuários</h2>
+  <form [formGroup]="formUser">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input type="email" matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Idade</mat-label>
+      <input type="number" matInput formControlName="age" />
+    </mat-form-field>
+  </form>
+  <div class="action">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="formUser.invalid"
+      (click)="createUser()"
+      *ngIf="!isEdit"
+    >
+      Cadastrar
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      [disabled]="formUser.invalid"
+      (click)="updateUser()"
+      *ngIf="isEdit"
+    >
+      Atualizar
+    </button>
+  </div>
+</section>
+
+<section>
+  <mat-card class="card">
+    <mat-card-content>
+      <app-table
+        [dataSource]="userDataSource"
+        (user)="loadDataForm($event)"
+        (reload)="listUsers()"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</section>
